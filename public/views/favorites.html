@@ -1,0 +1,9 @@
+<h1>Favorites</h1>
+<div class='favImage' ng-repeat='gif in fav.favorites'>
+  <img ng-src='{{gif.url}}'/>
+  <p>{{gif.comment}}</p>
+  <button ng-click='fav.deleteFavorite(gif.id)'>DELETE</button>
+
+  <input type='text' ng-model='newComment'>
+  <button ng-click='fav.makeNewComment(newComment, gif.id)'>Change Comment</button>
+</div>

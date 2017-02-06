@@ -1,0 +1,24 @@
+<main>
+  <div class='homeSearch'>
+    <h2>Free Gifs</h2>
+
+    <input type='text' name='search-query' value='' ng-model='home.query'>
+    <button type='submit' ng-click='home.searchItem(home.query)'>Search</button>
+    <button name='random' ng-click='home.randomSearch()'>Gif It To Me All Random Like</button>
+  </div>
+
+  <div class='favImage' ng-repeat="gif in home.gifs">
+    <img ng-src="{{gif.images.original.url}}"/>
+    <button ng-click='home.postFavGif(gif.images.original.url, home.comment)'>Save Forever</button>
+    <input type='text' name='comment' ng-model='home.comment' value=''>
+  </div>
+
+  <!-- picture result for random -->
+  <div ng-class='home.class'>
+    <div class='favImage'>
+      <img ng-src='{{home.pic}}' />
+      <input type='text' name='comment' ng-model='home.comment' value=''>
+      <button ng-click='home.postFavGif(home.pic, home.comment)'>Save Forever</button>
+    </div>
+  </div>
+</main>
